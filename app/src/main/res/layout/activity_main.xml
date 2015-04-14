@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="plmba.cargpslocator.app.MainActivity">
+
+    <TabHost
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/tabHost">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:tabStripEnabled="true"
+                android:visibility="visible"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:id="@+id/tabMain"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:focusableInTouchMode="false"
+                    android:layout_gravity="center">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Call   "
+                        android:id="@+id/butCall"
+                        android:layout_gravity="center_horizontal|right"
+                        android:layout_marginTop="40dp"
+                        android:clickable="true"
+                        android:onClick="onBtnClickCall"
+                        android:layout_marginRight="40dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get Link"
+                        android:id="@+id/butGetLink"
+                        android:clickable="true"
+                        android:layout_marginTop="-49dp"
+                        android:onClick="onBtnClick"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="30dp" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/EditTextPN"
+                        android:layout_gravity="center_horizontal"
+                        android:editable="true"
+                        android:text="@string/phone_number"
+                        android:layout_marginTop="80dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabHist"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textGPSLink"
+                        android:hint="Tu to bude"
+                        android:linksClickable="true"
+                        android:textAlignment="center"
+                        android:clickable="true"
+                        android:autoLink="map|web|all"
+                        android:enabled="true"
+                        android:editable="false"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>

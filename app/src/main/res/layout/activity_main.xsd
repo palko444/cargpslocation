@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RelativeLayout" type="RelativeLayoutType"/>
+  <xs:complexType name="EditTextType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_gravity" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:editable" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:text" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_marginTop" xmlns:and="http://schemas.android.com/apk/res/android"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FrameLayoutType">
+    <xs:sequence>
+      <xs:element type="LinearLayoutType" name="LinearLayout" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+  </xs:complexType>
+  <xs:complexType name="RelativeLayoutType">
+    <xs:sequence>
+      <xs:element type="TabHostType" name="TabHost"/>
+    </xs:sequence>
+    <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:paddingLeft" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:paddingRight" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:paddingTop" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:paddingBottom" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="tool:context" xmlns:tool="http://schemas.android.com/tools"/>
+  </xs:complexType>
+  <xs:complexType name="TabHostType">
+    <xs:sequence>
+      <xs:element type="LinearLayoutType" name="LinearLayout"/>
+    </xs:sequence>
+    <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+  </xs:complexType>
+  <xs:complexType name="LinearLayoutType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="ButtonType" name="Button"/>
+      <xs:element type="EditTextType" name="EditText"/>
+      <xs:element type="TextViewType" name="TextView"/>
+      <xs:element type="TabWidgetType" name="TabWidget"/>
+      <xs:element type="FrameLayoutType" name="FrameLayout"/>
+    </xs:choice>
+    <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:orientation" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:visibility" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:focusableInTouchMode" xmlns:and="http://schemas.android.com/apk/res/android"/>
+    <xs:attribute ref="and:layout_gravity" xmlns:and="http://schemas.android.com/apk/res/android"/>
+  </xs:complexType>
+  <xs:complexType name="TextViewType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:textAppearance" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:hint" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:linksClickable" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:textAlignment" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:clickable" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:autoLink" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:enabled" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:editable" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:visibility" xmlns:and="http://schemas.android.com/apk/res/android"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ButtonType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:text" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_gravity" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_marginTop" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:clickable" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:onClick" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_marginRight" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_marginLeft" xmlns:and="http://schemas.android.com/apk/res/android"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TabWidgetType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="and:id" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_width" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:layout_height" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:baselineAligned" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:orientation" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:tabStripEnabled" xmlns:and="http://schemas.android.com/apk/res/android"/>
+        <xs:attribute ref="and:visibility" xmlns:and="http://schemas.android.com/apk/res/android"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
